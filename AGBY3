@@ -112,10 +112,10 @@ local keys = { Up = Enum.KeyCode.J; Down = Enum.KeyCode.F; Left = Enum.KeyCode.D
 -- they are "weird" because they are in the middle of their Upper & Lower ranges 
 -- should hopefully make them more precise!
 local chanceValues = {
-	Sick = 99,
-	Good = 92,
-	Ok = 87,
-	Bad = 77,
+	Sick = 109,
+	Good = 0,
+	Ok = 0,
+	Bad = 0,
 }
 
 local marked = {}
@@ -155,7 +155,7 @@ runService:BindToRenderStep(shared._id, 1, function()
 					if arrow.Data.Length > 0 then
 						fastWait(arrow.Data.Length)
 					else
-						fastWait(0.035) -- 0.1 seems to make it miss more, this should be fine enough?
+						fastWait(0.085) -- 0.1 seems to make it miss more, this should be fine enough?
 					end
 
 					fireSignal(scrollHandler, userInputService.InputEnded, { KeyCode = keys[position], UserInputType = Enum.UserInputType.Keyboard }, false)
